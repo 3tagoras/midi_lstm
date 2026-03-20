@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "songs_generator_using_lstm"
+version = "0.0.1"
+description = "Generator of midi songs using RNN with LSTM architecture, and trained on the MusicNet dataset forked in kaggle"
+authors = [
+  { name = "Moreno Esparza J.A." },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+requires-python = "==3.12.3"
+
+
+[tool.ruff]
+line-length = 99
+src = ["songs_generator_using_lstm"]
+include = ["pyproject.toml", "songs_generator_using_lstm/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["songs_generator_using_lstm"]
+force-sort-within-sections = true
+
